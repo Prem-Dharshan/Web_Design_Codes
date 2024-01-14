@@ -1,0 +1,28 @@
+<!-- Create HTML documents to obtain the following designs on your web browser screen using appropriate HTML elements -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Headers Styling</title>
+    <style>
+        .diffHeaders {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="diffHeaders">Heading Centering</h1>
+    <hr>
+    <div class="diffHeaders"></div>
+    <script>
+        var x = "", i;
+        for ( i = 1; i <= 6; i++ ) {
+            x = x + "<h" + i + ">Heading Level #" + i + "</h" + i + ">";
+        }
+        document.getElementsByClassName( "diffHeaders" )[1].innerHTML = x;
+    </script>
+</body>
+
+</html>

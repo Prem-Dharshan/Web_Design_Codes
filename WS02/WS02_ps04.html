@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid grey;
+            border-bottom: 1px solid grey;
+        }
+        table {
+            border-width: 2px;
+        }
+        th {
+            text-align: center;
+        }
+
+        tr, th, td {
+            padding-right: 5px;
+        }
+
+        table {
+            border-color: gray;
+        }
+        tr:nth-child(1), tr:nth-child(5){
+            background-color: #a0b0e0;
+        }
+        tr:nth-child(2){
+            background-color: #b1e1a7;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="4">Company Employees</th>
+        </tr>
+        <tr>
+            <th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Anto</td>
+            <td>35</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Jason</td>
+            <td>42</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <th colspan="4">Company Contractors</th>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>Kathy</td>
+            <td>23</td>
+            <td>Female</td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>Lavoie</td>
+            <td>53</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>jacky</td>
+            <td>23</td>
+            <td>Female</td>
+        </tr>
+    </table>
+</body>
+
+</html>

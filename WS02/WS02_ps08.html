@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, tr {
+            padding: 10px;
+        }
+        .border-none {
+            border-collapse: collapse;
+            border: none;
+        }
+
+        .border-none td {
+            border: 1px solid black;
+        }
+
+        .border-none tr:first-child td {
+            border-top: none;
+        }
+
+        .border-none tr:last-child td {
+            border-bottom: none;
+        }
+
+        .border-none tr td:first-child {
+            border-left: none;
+        }
+
+        .border-none tr td:last-child {
+            border-right: none;
+        }
+    </style>   
+</head>
+<body>
+    <table class="border-none">
+        <tr>
+            <td></td>
+            <td>Col 1</td>
+            <td>Col 2</td>
+            <td>Col 3</td>
+            <td>Col 4</td>
+            <td>Col 5</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Row 1</td>
+            <td colspan="5">Header</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Row 2</td>
+            <td rowspan="3">Left Index</td>
+            <td colspan="2">text</td>
+            <td>pic</td>
+            <td>pic</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Row 3</td>
+            <td>pic</td>
+            <td colspan="3">text</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Row 4</td>
+            <td colspan="4"><mark>text</mark></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Coloured Numbers</title>
+	</head>
+	<body>
+		<div id="printNos"></div>
+		<script>
+			var x = "", i;
+			const arr = ["#ff80ed", "#065535", "#000000", "#133337", "blue", "black", "red", "#008080"]
+			for (i=0; i<=arr.length; i++) {
+			  x = x + "<p style='color:" + arr[i] + "';>" + i + "</p>";
+			}
+			document.getElementById("printNos").innerHTML = x;
+		</script>
+	</body>
+</html>

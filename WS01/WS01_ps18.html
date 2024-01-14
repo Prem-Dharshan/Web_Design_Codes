@@ -1,0 +1,73 @@
+<!-- Print two addresses in the same format used on the front of envelopes (senders address in top left corner, receivers address in the center). -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .container {
+      height: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .envelope {
+      background-color: #D5A15F;
+      display: flex;
+      gap: 50px;
+      flex-direction: column;
+      width: 550px;
+      height: 350px;
+      border-right: 2px brown solid;
+    }
+    .envelope:nth-child(1){
+      text-align: right;
+      padding-right: 40px;
+      padding-top: 10px;
+      line-height: 2px;
+    }
+    .second-child{
+      text-align: left;
+      align-self: center;
+      line-height: 2px;
+    }
+    .cover {
+      background-color: #D5A15F;
+      width: 20px;
+      height: 350px;
+      border-top: 40px solid white;;
+      border-bottom: 40px solid white;
+      border-left: 40px solid #D5A15F;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="" async defer></script>
+  <div class="container">
+    <div class="envelope">
+      <div>
+        <p>Sender name</p>
+        <p>Sender address</p>
+        <p>Sender city</p>
+      </div>
+      <div class="second-child">
+        <p>Sender name</p>
+        <p>Sender address</p>
+        <p>Sender city</p>
+      </div>
+    </div>
+    <div class="cover">
+    </div>
+  </div>
+</body>

@@ -1,0 +1,53 @@
+<!--  Image Alignment -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Alignment</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin-top: -10px;
+        }
+
+        p {
+            white-space: pre-line;
+            margin-top: -15px;
+        }
+
+        div:nth-child(1){
+            text-align: left;
+        }
+
+        div:nth-child(2){
+            text-align: center;
+        }
+
+        div:nth-child(3){
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Left</h3>
+        <img src="download.jpeg">
+    </div>
+    <div>
+        <h3>Center</h3>
+        <img src="download.jpeg">
+    </div>
+    <div>
+        <h3>Right</h3>
+        <img src="download.jpeg">
+    </div>
+</body>
+
+</html>

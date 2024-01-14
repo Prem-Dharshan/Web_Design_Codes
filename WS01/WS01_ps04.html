@@ -1,0 +1,21 @@
+<!-- 4.	Write a HTML code to print your name with different heading style. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Name in Headers</title>
+</head>
+
+<body>
+	<div id="diffHeaders"></div>
+	<script>
+		var x = "", i;
+		for ( i = 1; i <= 6; i++ ) {
+			x = x + "<h" + i + ">DPD</h" + i + ">";
+		}
+		document.getElementById( "diffHeaders" ).innerHTML = x;
+	</script>
+</body>
+
+</html>

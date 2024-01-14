@@ -1,0 +1,45 @@
+<!-- Prints 10 names with a line break between each name. The list should be alphabetized, and
+to do this place a subscripted number next to each name based on where it will go in the
+alphabetized list. (Example: Alan1). Print first, the unalphabetized list with a subscript
+number next to each name, then the alphabetized list. Both lists should have an &lt;h1&gt; level
+heading. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetized List</title>
+</head>
+
+<body>
+
+    <h1>Unalphabetized List</h1>
+    <div id="unalphabetized-list"></div>
+
+    <h1>Alphabetized List</h1>
+    <div id="alphabetized-list"></div>
+
+    <script>
+        var names = ["Alice", "Charlie", "Bob", "David", "Eve", "Grace", "Frank", "Heidi", "Ivan", "Jack"];
+
+        var unalphabetizedHtml = "<ul>";
+        for ( var i = 0; i < names.length; i++ ) {
+            unalphabetizedHtml += "<li>" + names[i] + "<sub>" + ( i + 1 ) + "</sub></li>";
+        }
+        unalphabetizedHtml += "</ul>";
+        document.getElementById( "unalphabetized-list" ).innerHTML = unalphabetizedHtml;
+
+        var alphabetizedNames = names.slice().sort();
+
+        var alphabetizedHtml = "<ul>";
+        for ( var j = 0; j < alphabetizedNames.length; j++ ) {
+            alphabetizedHtml += "<li>" + alphabetizedNames[j] + "<sub>" + ( j + 1 ) + "</sub></li>";
+        }
+        alphabetizedHtml += "</ul>";
+        document.getElementById( "alphabetized-list" ).innerHTML = alphabetizedHtml;
+    </script>
+
+</body>
+</html>

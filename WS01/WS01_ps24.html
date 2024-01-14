@@ -1,0 +1,61 @@
+<!-- Design a web page to display five different images. Skip two lines between each image. Each image should have a title. Also, display each image that has a border of size 2, a width of 200, and a height of 200. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .image-container img {
+            border: 2px solid black;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Image 1" title="Beautiful Landscape 1">
+        <p>Beautiful Landscape 1</p>
+    </div>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Image 2" title="Cityscape at Night">
+        <p>Cityscape at Night</p>
+    </div>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Image 3" title="Flower Blossoms">
+        <p>Flower Blossoms</p>
+    </div>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Image 4" title="Abstract Artwork">
+        <p>Abstract Artwork</p>
+    </div>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Image 5" title="Sunset on the Beach">
+        <p>Sunset on the Beach</p>
+    </div>
+
+</body>
+
+</html>

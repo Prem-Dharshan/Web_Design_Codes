@@ -1,0 +1,39 @@
+<!-- Create a page with a link at the top of it that when clicked will jump all the way to the bottom of the page. At the bottom of the page there should be a link to jump back to the top of the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Links Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #top-link,
+        #bottom-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a id="top-link" href="#bottom-section">Jump to Bottom</a>
+
+    <h1>Main Content Goes Here</h1>
+
+    <div id="bottom-section">
+        <h2>Bottom of the Page</h2>
+        <div style="height: 500px;">Content</div>
+        <a id="bottom-link" href="#top-link">Back to Top</a>
+    </div>
+
+</body>
+
+</html>
