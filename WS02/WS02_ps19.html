@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PS2 - Q19</title>
+</head>
+<style>
+    .header {
+        text-align: center;
+        font-size: 50px;
+        width: 1020px;
+        height: 30px;
+        background-color: #f5f116;
+    }
+
+    .hyd {
+        background-color: #dd8484;
+        color: rgb(28, 126, 6);
+    }
+
+    td:not(:empty) {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    td:empty {
+        empty-cells: hide;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <th class="header">The Periodic Table</th>
+        </tr>
+    </table>
+
+    <table class="periodic-table">
+        <tr>
+            <td class="hyd">
+                1<br />
+                H
+            </td>
+            <!-- adding 16 empty cells -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td style="color: rgb(28, 126, 6); background-color: #bbc8e6">
+                2<br />
+                He
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #e99bd8">
+                3<br />
+                Li
+            </td>
+            <td style="background-color: #9bc7e9">
+                4<br />
+                Be
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td style="background-color: #bc6406">
+                5<br />
+                B
+            </td>
+            <td style="background-color: #f1845f">
+                6<br />
+                C
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #f1845f">
+                7<br />
+                N
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #f1845f">
+                8<br />
+                O
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #f5f5d9">
+                9<br />
+                F
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #bbc8e6">
+                10<br />
+                Ne
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #e99bd8">
+                11<br />
+                Na
+            </td>
+            <td style="background-color: #9bc7e9">
+                12<br />
+                Mg
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td style="background-color: #b1f38b">
+                13<br />
+                Al
+            </td>
+            <td style="background-color: #bc6406">
+                14<br />
+                Si
+            </td>
+            <td style="background-color: #f1845f">
+                15<br />
+                P
+            </td>
+            <td style="background-color: #f1845f">
+                16<br />
+                S
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #f5f5d9">
+                17<br />
+                Cl
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #bbc8e6">
+                18<br />
+                Ar
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #e99bd8">
+                19<br />
+                K
+            </td>
+            <td style="background-color: #9bc7e9">
+                20<br />
+                Ca
+            </td>
+            <td style="background-color: #eae7a9; width: 80px">
+                21<br />
+                Sc
+            </td>
+            <td style="background-color: #eae7a9">
+                22<br />
+                Ti
+            </td>
+            <td style="background-color: #eae7a9">
+                23<br />
+                V
+            </td>
+            <td style="background-color: #eae7a9">
+                24<br />
+                Cr
+            </td>
+            <td style="background-color: #eae7a9">
+                25<br />
+                Mn
+            </td>
+            <td style="background-color: #eae7a9">
+                26<br />
+                Fe
+            </td>
+            <td style="background-color: #eae7a9">
+                27<br />
+                Co
+            </td>
+            <td style="background-color: #eae7a9">
+                28<br />
+                Ni
+            </td>
+            <td style="background-color: #eae7a9">
+                29<br />
+                Cu
+            </td>
+            <td style="background-color: #eae7a9">
+                30<br />
+                Zn
+            </td>
+            <td style="background-color: #b1f38b">
+                31<br />
+                Ga
+            </td>
+            <td style="background-color: #bc6406">
+                32<br />
+                Ge
+            </td>
+            <td style="background-color: #bc6406">
+                33<br />
+                As
+            </td>
+            <td style="background-color: #f1845f">
+                34<br />
+                Se
+            </td>
+            <td style="background-color: #f5f5d9">
+                35<br />
+                Br
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #bbc8e6">
+                36<br />
+                Kr
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #e99bd8">
+                37<br />
+                Rb
+            </td>
+            <td style="background-color: #9bc7e9">
+                38<br />
+                Sr
+            </td>
+            <td style="background-color: #eae7a9; width: 80px">
+                39<br />
+                Y
+            </td>
+            <td style="background-color: #eae7a9">
+                40<br />
+                Zr
+            </td>
+            <td style="background-color: #eae7a9">
+                41<br />
+                Nb
+            </td>
+            <td style="background-color: #eae7a9">
+                42<br />
+                Mo
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                43<br />
+                Tc
+            </td>
+            <td style="background-color: #eae7a9">
+                44<br />
+                Ru
+            </td>
+            <td style="background-color: #eae7a9">
+                45<br />
+                Rh
+            </td>
+            <td style="background-color: #eae7a9">
+                46<br />
+                Pd
+            </td>
+            <td style="background-color: #eae7a9">
+                47<br />
+                Ag
+            </td>
+            <td style="background-color: #eae7a9">
+                48<br />
+                Cd
+            </td>
+            <td style="background-color: #b1f38b">
+                49<br />
+                In
+            </td>
+            <td style="background-color: #b1f38b">
+                50<br />
+                Sn
+            </td>
+            <td style="background-color: #bc6406">
+                51<br />
+                Sb
+            </td>
+            <td style="background-color: #bc6406">
+                52<br />
+                Te
+            </td>
+
+            <td style="background-color: #f5f5d9">
+                53<br />
+                I
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #bbc8e6">
+                54<br />
+                Xe
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #e99bd8">
+                55<br />
+                Cs
+            </td>
+            <td style="background-color: #9bc7e9">
+                56<br />
+                Ba
+            </td>
+            <td style="background-color: #f9ddf5; width: 80px">57-71<br /></td>
+            <td style="background-color: #eae7a9">
+                72<br />
+                Hf
+            </td>
+            <td style="background-color: #eae7a9">
+                73<br />
+                Ta
+            </td>
+            <td style="background-color: #eae7a9">
+                74<br />
+                W
+            </td>
+            <td style="background-color: #eae7a9">
+                75<br />
+                Re
+            </td>
+            <td style="background-color: #eae7a9">
+                76<br />
+                Os
+            </td>
+            <td style="background-color: #eae7a9">
+                77<br />
+                Ir
+            </td>
+            <td style="background-color: #eae7a9">
+                78<br />
+                Pt
+            </td>
+            <td style="background-color: #eae7a9">
+                79<br />
+                Au
+            </td>
+            <td style="background-color: #eae7a9">
+                80<br />
+                Hg
+            </td>
+            <td style="background-color: #b1f38b">
+                81<br />
+                Tl
+            </td>
+            <td style="background-color: #b1f38b">
+                82<br />
+                Pb
+            </td>
+            <td style="background-color: #b1f38b">
+                83<br />
+                Bi
+            </td>
+            <td style="background-color: #bc6406">
+                84<br />
+                Po
+            </td>
+            <td style="background-color: #f5f5d9">
+                85<br />
+                At
+            </td>
+            <td style="color: rgb(28, 126, 6); background-color: #bbc8e6">
+                86<br />
+                Rn
+            </td>
+        </tr>
+
+        <tr>
+            <td style="background-color: #e99bd8">
+                87<br />
+                Fr
+            </td>
+            <td style="background-color: #9bc7e9">
+                88<br />
+                Ra
+            </td>
+            <td style="background-color: #f9ddf5; width: 80px">89-103<br /></td>
+            <td style="color: red; background-color: #eae7a9">
+                104<br />
+                Rf
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                105<br />
+                Db
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                106<br />
+                Sg
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                107<br />
+                Bh
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                108<br />
+                Hs
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                109<br />
+                Mt
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                110<br />
+                Ds
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                111<br />
+                Rg
+            </td>
+            <td style="color: red; background-color: #eae7a9">
+                112<br />
+                Cn
+            </td>
+            <td style="color: red; background-color: #fefef9">
+                113<br />
+                Nh
+            </td>
+            <td style="color: red; background-color: #fefef9">
+                114<br />
+                Fl
+            </td>
+            <td style="color: red; background-color: #fefef9">
+                115<br />
+                Mc
+            </td>
+            <td style="color: red; background-color: #fefef9">
+                116<br />
+                Lv
+            </td>
+            <td style="color: red; background-color: #fefef9">
+                117<br />
+                Ts
+            </td>
+            <td style="color: red; background-color: #fefef9">
+                118<br />
+                Ar
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td style="width: 50px; height: 50px"></td>
+            <td style="width: 50px; height: 50px"></td>
+            <td style="background-color: #f9ddf5">
+                57<br />
+                La
+            </td>
+            <td style="background-color: #f9ddf5">
+                58<br />
+                Ce
+            </td>
+            <td style="background-color: #f9ddf5">
+                59<br />
+                Pr
+            </td>
+            <td style="background-color: #f9ddf5">
+                60<br />
+                Nd
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                61<br />
+                Pm
+            </td>
+            <td style="background-color: #f9ddf5">
+                62<br />
+                Sm
+            </td>
+            <td style="background-color: #f9ddf5">
+                63<br />
+                Eu
+            </td>
+            <td style="background-color: #f9ddf5">
+                64<br />
+                Gd
+            </td>
+            <td style="background-color: #f9ddf5">
+                65<br />
+                Tb
+            </td>
+            <td style="background-color: #f9ddf5">
+                66<br />
+                Dy
+            </td>
+            <td style="background-color: #f9ddf5">
+                67<br />
+                Ho
+            </td>
+            <td style="background-color: #f9ddf5">
+                68<br />
+                Er
+            </td>
+            <td style="background-color: #f9ddf5">
+                69<br />
+                Tm
+            </td>
+            <td style="background-color: #f9ddf5">
+                70<br />
+                Yb
+            </td>
+            <td style="background-color: #f9ddf5">
+                71<br />
+                Lu
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+
+            <td style="background-color: #f9ddf5">
+                89<br />
+                Ac
+            </td>
+            <td style="background-color: #f9ddf5">
+                90<br />
+                Th
+            </td>
+            <td style="background-color: #f9ddf5">
+                91<br />
+                Pa
+            </td>
+            <td style="background-color: #f9ddf5">
+                92<br />
+                U
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                93<br />
+                Np
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                94<br />
+                Pu
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                95<br />
+                Am
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                96<br />
+                Cm
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                97<br />
+                Bk
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                98<br />
+                Cf
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                99<br />
+                Es
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                100<br />
+                Fm
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                101<br />
+                Md
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                102<br />
+                No
+            </td>
+            <td style="color: red; background-color: #f9ddf5">
+                103<br />
+                Lr
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

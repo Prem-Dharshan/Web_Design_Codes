@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS2 - Q14</title>
+    <style>
+        table {
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+        }
+
+        table tr:nth-child(1),
+        table tr:last-child,
+        .mid td:first-child,
+        .mid td:last-child {
+            color: rgb(135, 135, 135);
+            font-weight: bold;
+        }
+
+        .content {
+            color: #fdf5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <table frame="void">
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td></td>
+        </tr>
+        <tr class="mid">
+            <td>1</td>
+            <td class="content" colspan="3" rowspan="2" style="background-color: teal">
+                A
+            </td>
+            <td class="content" colspan="4" rowspan="2" style="background-color: brown">
+                B
+            </td>
+            <td>1</td>
+        </tr>
+        <tr class="mid">
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr class="mid">
+            <td>3</td>
+            <td class="content" colspan="7" style="background-color: pink">C</td>
+            <td>3</td>
+        </tr>
+        <tr class="mid">
+            <td>4</td>
+            <td class="content" rowspan="2" colspan="6" style="background-color: olivedrab">
+                D
+            </td>
+            <td class="content" style="background-color: blueviolet">E</td>
+            <td>4</td>
+        </tr>
+        <tr class="mid">
+            <td>5</td>
+            <td class="content" style="background-color: blue">F</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

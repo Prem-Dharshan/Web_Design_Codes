@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS2 - Q13</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 3px solid black;
+        }
+
+        td,
+        th {
+            border: 3px solid black;
+            padding: 7px;
+        }
+
+        th {
+            color: yellow;
+            background-color: black;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        td {
+            color: white;
+        }
+
+        body {
+            background-color: rgb(104, 0, 0);
+        }
+
+        h2 {
+            color: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Difference between the Translators</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Assembler</th>
+                <th>Compiler</th>
+                <th>Interpreter</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Translate low level language into machine code</td>
+                <td>Translate high level language into machine code</td>
+                <td>Translate high level language into machine code</td>
+            </tr>
+            <tr>
+                <td>Written for particular hardware</td>
+                <td>Written for particular language</td>
+                <td>Written for particular language</td>
+            </tr>
+            <tr>
+                <td>One instruction translates to one instruction (one to one)</td>
+                <td>One instruction translates to many instructions (one to many)</td>
+                <td>One instruction translates to many instructions</td>
+            </tr>
+            <tr>
+                <td>Translates entire program before running</td>
+                <td>Translates entire program before running</td>
+                <td>
+                    Translates program instruction by instruction until an either
+                    completed or error detected
+                </td>
+            </tr>
+            <tr>
+                <td>They produce object code</td>
+                <td></td>
+                <td>It does not produce an object</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
