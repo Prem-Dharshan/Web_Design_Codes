@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <img src="1.jpg" alt="List of OS" usemap="#os">
-    <map name="os">
-        <area shape="rect" coords="619,223,738,257" href="https://unix.org/" target="_blank">
-        <area shape="rect" coords="106,420,361,508" href="https://www.blackberry.com/us/en" target="_blank">
+    <title>Tech Companies</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: 'Arial', sans-serif;
+        }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ecf0f1;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        map {
+            margin-top: 20px;
+        }
+
+        area {
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="2.jpg" alt="Tech Companies" usemap="#tech-companies">
+    <map name="tech-companies">
+        <area shape="rect" coords="383,173,479,218" href="https://dotnet.microsoft.com/en-us/apps/aspnet"
+            target="_blank">
+        <area shape="poly" coords="438,2,425,17,419,29,422,38,415,45,432,52,512,46,509,46,467,26,460,22,437,17,449,11"
+            href="https://www.java.com/en/" target="_blank">
+        <area shape="rect" coords="472,72,591,100" href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank">
+        <area shape="circle" coords="77,148,48" href="https://www.php.net/" target="_blank">
     </map>
 </body>
+
 </html>
