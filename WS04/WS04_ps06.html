@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration Form</title>
+    <style>
+        .content {
+            width: max-content;
+            margin: 40px;
+        }
+
+        .registration-section {
+            padding: 15px 10px;
+            padding-bottom: 2px;
+            background-color: #ffffdd;
+        }
+
+        label:not(input[type="radio"] ~ label) {
+            display: inline-block;
+            width: 130px;
+        }
+
+        body {
+            background-color: #ffcc66;
+            color: #cc3300;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        hr {
+            border: 1px solid #ede7cb;
+        }
+
+        .last {
+            margin-bottom: 0;
+        }
+
+        input:not([type="radio"]) {
+            border: 2px solid #c9c3a4;
+            height: 24px;
+            width: 200px;
+        }
+
+        select {
+            border: 2px solid #c9c3a4;
+            height: 28px;
+            width: 170px;
+            background-color: #fff;
+        }
+
+        #zip {
+            width: 180px;
+        }
+
+        .spacer {
+            height: 1.2em;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            border: 1px solid #597075;
+            border-radius: 3px;
+            font-size: 1em;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .cancel-btn {
+            margin-top: 10px;
+            border: 1px solid #597075;
+            border-radius: 3px;
+            font-size: 1em;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <form action="#">
+            <div class="registration-section">
+                <h3>Registration Form</h3>
+                <hr />
+                <div class="row">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" />
+                </div>
+                <hr />
+                <div class="row">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" />
+                </div>
+                <hr />
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" />
+                </div>
+                <hr />
+                <div class="row">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" />
+                </div>
+                <hr />
+                <div class="row">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" />
+                </div>
+                <hr />
+                <div class="row">
+                    <label for="country">Country</label>
+                    <select id="country">
+                        <option value="-" selected disabled>- Select country -</option>
+                        <option value="in">India</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="es">Spain</option>
+                    </select>
+                </div>
+                <hr />
+                <div class="row">
+                    <label for="zip">ZIP</label>
+                    <input type="number" name="zip" id="zip" min="100000" max="999999" />
+                </div>
+                <hr />
+                <div class="row">
+                    <label> Gender </label>
+                    <input type="radio" name="gender" value="male" id="male" />
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" value="female" id="female" />
+                    <label for="female">Female</label>
+                </div>
+                <hr />
+                <div class="spacer"></div>
+                <hr class="last" />
+            </div>
+            <button type="submit" class="submit-btn">Save</button>
+            <button type="reset" class="cancel-btn">Cancel</button>
+        </form>
+    </div>
+</body>
+
+</html>

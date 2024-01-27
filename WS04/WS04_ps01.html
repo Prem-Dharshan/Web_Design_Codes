@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>South Park Viewer Survey</title>
+    <style>
+        body,
+        html {
+            color: #fff;
+            font-family: "Abel", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        body {
+            font-size: 1.2em;
+            background-size: cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url(https://wallpapercave.com/wp/Fdh76FQ.jpg) center no-repeat fixed;
+        }
+
+        label,
+        input {
+            display: inline-block;
+        }
+
+        label {
+            width: 40%;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        .inputs {
+            display: inline-block;
+        }
+
+        input,
+        select,
+        textarea {
+            margin-left: 10px;
+        }
+
+        .container {
+            background-color: rgba(22, 160, 133, 0.7);
+            border-radius: 20px;
+            margin: auto;
+            width: 98%;
+            height: 100vh;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #e67e22;
+            border-radius: 4px;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            font-family: inherit;
+            padding: 10px 15px;
+            border: 1px solid;
+            width: 120px;
+            text-align: center;
+            margin: 20px;
+            margin-left: 400px;
+        }
+
+        button:hover {
+            background-color: #bf6516;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="get">
+            <div>
+                <label for="name"> *Fullname</label>
+                <input type="text" name="name" id="name" cols="40" required placeholder="Enter your name" />
+            </div>
+            <div>
+                <label for="email"> *Email</label>
+                <input type="email" name="email" id="email" required placeholder="email@email.com" />
+            </div>
+            <div>
+                <label for="age"> *Age</label>
+                <input type="number" name="age" id="age" required placeholder="15" min="1" max="120" />
+            </div>
+            <div>
+                <label for="select"> How do you watch South Park?</label>
+                <select id="select" name="site">
+                    <option disabled value selected>Select an option</option>
+                    <option value="web">Website</option>
+                    <option value="hulu">Hulu</option>
+                    <option value="youtube">Youtube</option>
+                    <option value="tv">TV</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label>How much do you like South Park?</label>
+                <div class="inputs">
+                    <input type="radio" name="radio-button" value="love" />I love it!<br />
+                    <input type="radio" name="radio-button" value="like" />I like it<br />
+                    <input type="radio" name="radio-button" value="ok" />It's ok<br />
+                    <input type="radio" name="radio-button" value="nah" />Not really<br />
+                </div>
+            </div>
+            <div>
+                <label for="dropdown">
+                    How many seasons of South Park have you watched?
+                </label>
+                <select id="dropdown" name="seasons">
+                    <option disabled value selected>Select an option</option>
+                    <option value="<=5">0-5</option>
+                    <option value="<=10">6-10</option>
+                    <option value="<=15">10-15</option>
+                    <option value="<=21">15-21</option>
+                </select>
+            </div>
+            <div>
+                <label>
+                    Who do you watch South Park with?<br />(Check all that apply):
+                </label>
+                <div class="inputs">
+                    <input type="checkbox" name="alone" value="alone" />Alone<br />
+                    <input type="checkbox" name="friends" value="fr" />Friends<br />
+                    <input type="checkbox" name="family" value="fam" />Family<br />
+                    <input type="checkbox" name="partner" value="fam" />Partner<br />
+                    <input type="checkbox" name="other" value="other" />Other<br />
+                </div>
+            </div>
+            <div>
+                <label for="comments">
+                    Tell us more about your favorite character(s) or episode(s)
+                </label>
+                <textarea id="comments" name="comments" rows="10" cols="40" placeholder="Your comments..."></textarea>
+            </div>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

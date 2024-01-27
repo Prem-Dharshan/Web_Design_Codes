@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Video Player</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 2em;
+            color: #ff0000;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #008000;
+            font-weight: bold;
+            text-align: left;
+            margin: 20px 100px;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        iframe {
+            width: 48%;
+            max-width: 550px;
+            height: 315px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Play videos using Iframe</h3>
+    <div>
+        <iframe src="https://www.youtube.com/embed/JHq3pL4cdy4"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+
+        <iframe src="https://www.youtube.com/embed/O5hShUO6wxs"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+    <p>In first video full screen is available and in second video full screen is not available</p>
+</body>
+
+</html>

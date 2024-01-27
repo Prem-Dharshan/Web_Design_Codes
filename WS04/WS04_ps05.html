@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS4 - Q5</title>
+    <style>
+      fieldset {
+        border: none;
+      }
+      label {
+        display: inline-block;
+        width: 150px;
+        vertical-align: top;
+        font-size: 1.1em;
+      }
+      .content {
+        background-color: #9cbc2c;
+        width: max-content;
+        padding: 30px;
+        border-radius: 9px;
+      }
+      .row {
+        background-color: #b9cf6a;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 3px solid #e3ebc3;
+        border-radius: 6px;
+      }
+      input:not([type="radio"]),
+      textarea {
+        width: 290px;
+      }
+      input:not([type="radio"]) {
+        height: 2em;
+        border: none;
+        border-radius: 5px;
+      }
+      textarea {
+        border: none;
+        border-radius: 5px;
+      }
+      legend {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #384313;
+      }
+      ::-webkit-input-placeholder {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-style: italic;
+        font-size: 1.3em;
+      }
+      .btn {
+        background-color: #384313;
+        color: aliceblue;
+        width: 130px;
+        height: 40px;
+        font-size: 1.4em;
+        border-radius: 30px;
+        font-family: "Times New Roman", Times, serif;
+
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <form action="#">
+        <fieldset>
+          <legend>Step 1: Your details</legend>
+          <div class="row">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="First and last name"
+            />
+          </div>
+          <div class="row">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@domain.com"
+            />
+          </div>
+          <div class="row">
+            <label for="num">Phone</label>
+            <input
+              type="tel"
+              name="num"
+              id="num"
+              placeholder="Eg. +447500000000"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Step 2: Delivery Address</legend>
+          <div class="row">
+            <label for="address">Address</label>
+            <textarea
+              name="address"
+              id="address"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="row">
+            <label for="pin">Post code</label>
+            <input
+              type="number"
+              name="pin"
+              id="pin"
+              min="100000"
+              max="999999"
+            />
+          </div>
+          <div class="row">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Step 3: Card details</legend>
+          <div class="row">
+            <label>Card type</label>
+            <br />
+            <input type="radio" name="type" id="visa" value="visa" />
+            <label for="visa">
+              <img src="https://via.placeholder.com/100" alt="visa" width="30px" height="20px" />
+              Visa
+            </label>
+            <input type="radio" name="type" id="amex" value="amex" />
+            <label for="amex">
+              <img src="https://via.placeholder.com/100" alt="amex" width="30px" height="20px" />
+              AmEx
+            </label>
+            <input type="radio" name="type" id="mc" value="mc" />
+            <label for="mc">
+              <img src="https://via.placeholder.com/20" alt="mc" width="30px" height="20px" /> Mastercard
+            </label>
+          </div>
+          <div class="row">
+            <label for="cno">Card number</label>
+            <input type="number" name="cno" id="cno" />
+          </div>
+          <div class="row">
+            <label for="sec">Security code</label>
+            <input type="number" name="sec" id="sec" />
+          </div>
+          <div class="row">
+            <label for="cname">Name on card</label>
+            <input
+              type="text"
+              name="cname"
+              id="cname"
+              placeholder="Exact name as on the card"
+            />
+          </div>
+        </fieldset>
+        <button class="btn">BUY IT!</button>
+      </form>
+    </div>
+  </body>
+</html>

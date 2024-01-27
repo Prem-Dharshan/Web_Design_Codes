@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Malmo+Sans+Pro:wght@700&family=Woolworth:wght@600&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        body {
+            padding-left: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+            font-size: 1.5em;
+        }
+
+        .content {
+            display: inline-block;
+            padding: 30px;
+            background-color: #6bfaf3;
+            box-shadow: 1px 1px #888888;
+            text-align: center;
+        }
+
+        .form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .input,
+        .select {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        label:not(.no) {
+            width: 140px;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            height: 30px;
+            border: 1px solid #547ef3;
+            border-radius: 3px;
+            padding: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .btn {
+            border: none;
+            width: 120px;
+            height: 50px;
+            border-radius: 3px;
+            margin-right: 10px;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .green {
+            background-color: #33d439;
+        }
+
+        .blue {
+            background-color: #547ef3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Project Management</h1>
+
+    <div class="content">
+        <form class="form" action="#">
+            <div class="input">
+                <label for="projectName"> Project name</label>
+                <input type="text" name="projectName" id="projectName" placeholder="Project name" />
+            </div>
+            <div class="input">
+                <label for="assignedTo"> Assigned to</label>
+                <select id="assignedTo">
+                    <option value="1" selected>Er Merry Petison</option>
+                    <option value="2">Jonathan Joestar</option>
+                    <option value="3">Giorno Giovanna</option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="startDate">Start date </label>
+                <input type="date" name="startDate" id="startDate" />
+            </div>
+            <div class="input">
+                <label for="endDate">End date </label>
+                <input type="date" name="endDate" id="endDate" />
+            </div>
+            <div class="input">
+                <label> Priority </label>
+                <input type="radio" name="priority" id="priority1" value="high" />
+                <label class="no" for="priority1"> High</label>
+                <input type="radio" name="priority" id="priority2" value="average" />
+                <label class="no" for="priority2"> Average</label>
+                <input type="radio" name="priority" id="priority3" value="low" />
+                <label class="no" for="priority3"> Low</label>
+            </div>
+            <div class="input">
+                <label for="description"> Description </label>
+                <textarea name="description" id="description"></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn green">Submit</button>
+            <button type="reset" class="btn blue">Clear</button>
+        </form>
+    </div>
+</body>
+
+</html>

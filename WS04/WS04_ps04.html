@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS4 - Q4</title>
+    <style>
+        h3 {
+            text-align: right;
+            color: maroon;
+            padding-right: 140px;
+        }
+
+        label,
+        input,
+        select,
+        .input {
+            display: inline-block;
+        }
+
+        .row>label {
+            width: 140px;
+        }
+
+        input:not([type="radio"], [type="checkbox"]),
+        textarea {
+            width: 400px;
+            border: 2px solid #cbcaca;
+        }
+
+        input:not([type="radio"], [type="checkbox"]) {
+            border-radius: 3px;
+            height: 40px;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        label {
+            vertical-align: top;
+            padding-top: 5px;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .content {
+            margin-left: 100px;
+            padding: 30px;
+            background-color: #f2f2f2;
+            width: 80%;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            width: 120px;
+            height: 40px;
+            background-color: #33d439;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3><u>Student registeration form</u></h3>
+    <div class="content">
+        <form action="#">
+            <div class="row">
+                <label for="fname"> First name:</label>
+                <div class="input">
+                    <input type="text" name="fname" id="fname" placeholder="Enter your first name" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="lname"> Last name:</label>
+                <div class="input">
+                    <input type="text" name="lname" id="lname" placeholder="Enter your last name" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="mail"> Email:</label>
+                <div class="input">
+                    <input type="email" name="mail" id="mail" placeholder="it should contain @." />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="phone"> Mobile:</label>
+                <div class="input">
+                    <input type="tel" name="phone" id="phone" placeholder="only 10 digits are allowed" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="gender"> Gender:</label>
+                <div class="input">
+                    <input type="radio" name="gender" id="male" value="male" />
+                    <label for="male"> Male</label>
+
+                    <input type="radio" name="gender" id="female" value="female" />
+                    <label for="female"> Female</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="dob"> Date of Birth:</label>
+                <div class="input">
+                    <input type="date" name="dob" id="dob" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="address"> Address:</label>
+                <div class="input">
+                    <textarea id="address" cols="40" rows="5"> </textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="city"> City:</label>
+                <div class="input">
+                    <input type="text" name="city" id="city" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="pin"> Area PIN:</label>
+                <div class="input">
+                    <input type="number" name="pin" id="pin" min="0" max="999999" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="state"> State:</label>
+                <div class="input">
+                    <input type="text" name="state" id="state" />
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="qual"> Qualification:</label>
+                <div class="input">
+                    <select name="qual" id="qual">
+                        <option disabled value="#" selected>
+                            Select a qualification
+                        </option>
+                        <option value="dum">Illiterate</option>
+                        <option value="not dum">School Grad</option>
+                        <option value="amy">College Grad</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <label>Specialisation:</label>
+                <div class="input">
+                    <div class="opt">
+                        <input type="checkbox" name="CS" id="CS" />
+                        <label for="CS">Computer Science</label>
+                    </div>
+                    <div class="opt">
+                        <input type="checkbox" name="IT" id="IT" />
+                        <label for="IT">Information Technology</label>
+                    </div>
+                    <div class="opt">
+                        <input type="checkbox" name="CA" id="CA" />
+                        <label for="CA">Computer Architecture</label>
+                    </div>
+                    <div class="opt">
+                        <input type="checkbox" name="TC" id="TC" />
+                        <label for="TC">Tele Communication</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="passwd"> Password:</label>
+                <div class="input">
+                    <input type="password" name="passwd" id="passwd" />
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
