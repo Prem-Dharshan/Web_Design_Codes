@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS7 - Q1</title>
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ebe5e5;
+        }
+
+        .form-container {
+            border: 1px solid ghostwhite;
+            background-color: white;
+
+            border-radius: 3px;
+            padding: 20px 35px;
+            width: 25%;
+            box-shadow: 0 0 2px black;
+
+            h1 {
+                font-weight: normal;
+                font-size: 2rem;
+                text-align: center;
+                padding: 20px 0;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        label {
+            color: #949494;
+        }
+
+        input {
+            height: 2rem;
+            border-radius: 3px;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 7px #007bff;
+            }
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.3rem;
+            height: 2.6rem;
+            padding: 10px;
+            vertical-align: middle;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .msg {
+            display: none;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Sign Up</h1>
+        <form action="" class="form">
+            <div class="input-group">
+                <label for="uname">Username:</label>
+                <input type="text" name="uname" id="uname" />
+                <span class="msg"></span>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" />
+                <span class="msg"> </span>
+            </div>
+            <div class="input-group">
+                <label for="passwd">Password:</label>
+                <input type="password" name="passwd" id="passwd" />
+                <span class="msg"></span>
+            </div>
+            <div class="input-group">
+                <label for="cpasswd">Confirm Password:</label>
+                <input type="password" name="cpasswd" id="cpasswd" />
+                <span class="msg"></span>
+            </div>
+
+            <button onclick="validate(event)">Sign up</button>
+        </form>
+    </div>
+
+    <script>
+        let validate = ( event ) => {
+            event.preventDefault();
+            let email = document.getElementById( "email" ).value;
+            let passwd = document.getElementById( "passwd" ).value;
+            let cpasswd = document.getElementById( "cpasswd" ).value;
+            let name = document.getElementById( "uname" ).value;
+            let correct;
+            console.log( email, passwd, cpasswd, name );
+
+            let emailRe = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let passwdRe =
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            document
+                .querySelectorAll( "span.msg" )
+                .forEach( ( x ) => ( x.style.display = "block" ) );
+
+            if ( !emailRe.test( email ) ) {
+                document.querySelector( "#email+span.msg" ).style.color = "red";
+                document.getElementById( "email" ).style.border = "2px solid red";
+                document.querySelector( "#email+span.msg" ).innerHTML = "Invalid email";
+            } else {
+                document.querySelector( "#email+span.msg" ).style.color = "green";
+                document.getElementById( "email" ).style.border = "2px solid green";
+                document.querySelector( "#email+span.msg" ).innerHTML = "Valid email";
+                correct = false;
+            }
+
+            if ( !passwdRe.test( passwd ) ) {
+                document.querySelector( "#passwd+span.msg" ).style.color = "red";
+                document.getElementById( "passwd" ).style.border = "2px solid red";
+                document.querySelector( "#passwd+span.msg" ).innerHTML =
+                    " Password must have atleast 8 characters that includes atleast 1 lowercase character, 1 uppercase character,1 number and 1 special character in (!@#$%^&*)";
+            } else {
+                document.querySelector( "#passwd+span.msg" ).style.color = "green";
+                document.getElementById( "passwd" ).style.border = "2px solid green";
+                document.querySelector( "#passwd+span.msg" ).innerHTML =
+                    "Valid password";
+                correct = false;
+            }
+
+            if ( cpasswd != passwd ) {
+                document.querySelector( "#cpasswd+span.msg" ).style.color = "red";
+                document.getElementById( "cpasswd" ).style.border = "2px solid red";
+                document.querySelector( "#cpasswd+span.msg" ).innerHTML =
+                    " Passwords do not match";
+            } else {
+                document.querySelector( "#cpasswd+span.msg" ).style.color = "green";
+                document.getElementById( "cpasswd" ).style.border = "2px solid green";
+                document.querySelector( "#cpasswd+span.msg" ).innerHTML = "Valid";
+                correct = false;
+            }
+
+            if ( name.length < 3 || name.length > 25 ) {
+                document.querySelector( "#uname+span.msg" ).style.color = "red";
+                document.getElementById( "uname" ).style.border = "2px solid red";
+                document.querySelector( "#uname+span.msg" ).innerHTML =
+                    "Username must be between 3 and 25 characters.";
+            } else {
+                document.querySelector( "#uname+span.msg" ).style.color = "green";
+                document.getElementById( "uname" ).style.border = "2px solid green";
+                document.querySelector( "#uname+span.msg" ).innerHTML =
+                    "Valid username";
+                correct = false;
+            }
+
+            if ( coorect === undefined ) {
+                console.log( "Correct!" );
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WS07_ps03</title>
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ebe5e5;
+        }
+
+        .form-container {
+            border: 1px solid ghostwhite;
+            background-color: white;
+
+            border-radius: 3px;
+            padding: 20px 35px;
+            width: 30%;
+            box-shadow: 0 0 2px black;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        label {
+            color: #2b2b2b;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+                "Lucida Sans", Arial, sans-serif;
+        }
+
+        input {
+            height: 2rem;
+            border-radius: 3px;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 7px #007bff;
+            }
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-size: 1.3rem;
+            height: 2.6rem;
+            padding: 10px;
+            vertical-align: middle;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .msg {
+            display: none;
+            font-size: 0.7rem;
+        }
+
+        .password {
+            display: flex;
+            gap: 10px;
+
+            &>* {
+                width: 50%;
+            }
+        }
+
+        .inp-wrap {
+            position: relative;
+
+            img {
+                position: absolute;
+                display: none;
+                right: 3px;
+                bottom: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="" class="form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <div class="inp-wrap">
+                    <input type="email" name="email" id="email" />
+                    <img src="info.svg" class="bad" width="25px" height="25px" />
+                    <img src="tick.svg" class="good" width="25px" height="25px" />
+                </div>
+                <span class="msg" id="mail"> </span>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone</label>
+                <div class="inp-wrap">
+                    <input type="tel" name="phone" id="phone" />
+                    <img src="info.svg" class="bad" width="25px" height="25px" />
+                    <img src="tick.svg" class="good" width="25px" height="25px" />
+                </div>
+                <span class="msg" id="call"></span>
+            </div>
+            <div class="password">
+                <div class="input-group">
+                    <label for="passwd">Password</label>
+                    <div class="inp-wrap">
+                        <input type="password" name="passwd" id="passwd" />
+                        <img src="info.svg" class="bad" width="25px" height="25px" />
+                        <img src="tick.svg" class="good" width="25px" height="25px" />
+                    </div>
+                    <span class="msg" id="pass"></span>
+                </div>
+                <div class="input-group">
+                    <label for="cpasswd">Confirm Password</label>
+                    <div class="inp-wrap">
+                        <input type="password" name="cpasswd" id="cpasswd" />
+                        <img src="info.svg" class="bad" width="25px" height="25px" />
+                        <img src="tick.svg" class="good" width="25px" height="25px" />
+                    </div>
+                    <span class="msg" id="cpass"></span>
+                </div>
+            </div>
+            <button onclick="validate(event)">Sign up</button>
+        </form>
+    </div>
+
+    <script>
+        let validate = ( event ) => {
+            event.preventDefault();
+            let email = document.getElementById( "email" ).value;
+            let passwd = document.getElementById( "passwd" ).value;
+            let cpasswd = document.getElementById( "cpasswd" ).value;
+            let phone = document.getElementById( "phone" ).value;
+            let correct;
+            console.log( email, passwd, cpasswd, phone );
+
+            let emailRe = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let passwdRe =
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            document
+                .querySelectorAll( "span.msg" )
+                .forEach( ( x ) => ( x.style.display = "block" ) );
+
+            document
+                .querySelectorAll( "img.good , img.bad" )
+                .forEach( ( x ) => ( x.style.display = "none" ) );
+            if ( !emailRe.test( email ) ) {
+                document.querySelector( "#mail" ).style.color = "red";
+                document.getElementById( "email" ).style.border = "2px solid red";
+                document.querySelector( "#mail" ).innerHTML =
+                    "Bruh, that email address is invalid.";
+                document.querySelector( "#email+.bad" ).style.display = "block";
+            } else {
+                document.querySelector( "#mail" ).style.color = "green";
+                document.getElementById( "email" ).style.border = "2px solid green";
+                document.querySelector( "#email~.good" ).style.display = "block";
+            }
+
+            if ( !passwdRe.test( passwd ) ) {
+                document.querySelector( "#pass" ).style.color = "red";
+                document.getElementById( "passwd" ).style.border = "2px solid red";
+                document.querySelector( "#pass" ).innerHTML =
+                    " Password must have atleast 8 characters that includes atleast 1 lowercase character, 1 uppercase character,1 number and 1 special character in (!@#$%^&*)";
+                document.querySelector( "#passwd+.bad" ).style.display = "block";
+            } else {
+                document.querySelector( "#pass" ).style.color = "green";
+                document.getElementById( "passwd" ).style.border = "2px solid green";
+                document.querySelector( "#passwd~.good" ).style.display = "block";
+            }
+
+            if ( !cpasswd || cpasswd != passwd ) {
+                document.querySelector( "#cpass" ).style.color = "red";
+                document.getElementById( "cpasswd" ).style.border = "2px solid red";
+                document.querySelector( "#cpass" ).innerHTML = "Passwords do not match";
+                document.querySelector( "#cpasswd+.bad" ).style.display = "block";
+            } else {
+                document.querySelector( "#cpass" ).style.color = "green";
+                document.getElementById( "cpasswd" ).style.border = "2px solid green";
+                document.querySelector( "#cpasswd~.good" ).style.display = "block";
+            }
+
+            if ( !/^[0-9]{10}$/.test( phone ) ) {
+                document.querySelector( "#call" ).style.color = "red";
+                document.getElementById( "phone" ).style.border = "2px solid red";
+                document.querySelector( "#call" ).innerHTML = "Only accept number.";
+                document.querySelector( "#phone+.bad" ).style.display = "block";
+            } else {
+                document.querySelector( "#call" ).style.color = "green";
+                document.getElementById( "phone" ).style.border = "2px solid green";
+                document.querySelector( "#phone~.good" ).style.display = "block";
+            }
+
+            if ( correct === undefined ) {
+                console.log( "Correct!" );
+            }
+        };
+    </script>
+</body>
+
+</html>

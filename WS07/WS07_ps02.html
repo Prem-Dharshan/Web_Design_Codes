@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS7 - Q2</title>
+    <style>
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container {
+            width: 60%;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            vertical-align: top;
+            padding-right: 10px;
+            padding-bottom: 20px;
+        }
+
+        input {
+            height: 2rem;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 7px #007bff;
+            }
+        }
+
+        button {
+            font-size: 1.3rem;
+            height: 2.6rem;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .msg {
+            display: none;
+            font-size: 0.7rem;
+        }
+
+        .input-group {
+            display: flex;
+        }
+
+        .msg {
+            display: inline-block;
+            font-size: 0.7rem;
+            margin-left: 10px;
+            vertical-align: top;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="" class="form">
+            <div class="input-group">
+                <label for="uname">Name:</label>
+                <input type="text" name="uname" id="uname" required />
+                <span class="msg"></span>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required />
+                <span class="msg"> </span>
+            </div>
+            <div class="input-group">
+                <label for="website">Website:</label>
+                <input type="url" name="website" id="website" required />
+                <span class="msg"></span>
+            </div>
+            <div class="input-group">
+                <label for="mensaje">Message :</label>
+                <textarea name="mensaje" id="mensaje" cols="40" rows="5" required></textarea>
+                <span class="msg"></span>
+            </div>
+
+            <div class="button-container">
+                <button onclick="validate(event)">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        let validate = ( event ) => {
+            event.preventDefault();
+            let email = document.getElementById( "email" ).value;
+            let website = document.getElementById( "website" ).value;
+            let mensaje = document.getElementById( "mensaje" ).value;
+            let name = document.getElementById( "uname" ).value;
+
+            let emailRe = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let webRe =
+                /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+            document
+                .querySelectorAll( "span.msg" )
+                .forEach( ( x ) => ( x.style.display = "block" ) );
+
+            if ( name === "" ) {
+                document.querySelector( "#uname+span.msg" ).style.color = "red";
+                document.getElementById( "uname" ).style.border = " 3px solid red";
+                document.querySelector( "#uname+span.msg" ).innerHTML =
+                    "This field is required";
+            }
+
+            if ( !emailRe.test( email ) || email === "" ) {
+                document.querySelector( "#email+span.msg" ).style.color = "red";
+                document.getElementById( "email" ).style.border = " 3px solid red";
+                document.querySelector( "#email+span.msg" ).innerHTML =
+                    "A valid email address is required";
+            }
+
+            if ( !webRe.test( website ) ) {
+                document.querySelector( "#website+span.msg" ).style.color = "red";
+                document.getElementById( "website" ).style.border = " 3px solid red";
+                document.querySelector( "#website+span.msg" ).innerHTML =
+                    "A valid url is required";
+            }
+            if ( mensaje === "" ) {
+                document.querySelector( "#mensaje+span.msg" ).style.color = "red";
+                document.getElementById( "mensaje" ).style.border = " 3px solid red";
+                document.querySelector( "#mensaje+span.msg" ).innerHTML =
+                    "This field is required";
+            }
+        };
+    </script>
+</body>
+
+</html>
