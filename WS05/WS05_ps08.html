@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Armstrong Numbers</title>
+</head>
+<body>
+
+<h2>Armstrong Numbers of 3 Digits</h2>
+
+<button onclick="findArmstrongNumbers()">Find Armstrong Numbers</button>
+
+<script>
+function findArmstrongNumbers() {
+  const armstrongNumbers = [];
+
+  // Loop through all three-digit numbers
+  for (let i = 100; i < 1000; i++) {
+    // Extract digits
+    const digit1 = Math.floor(i / 100);
+    const digit2 = Math.floor((i % 100) / 10);
+    const digit3 = i % 10;
+
+    // Check if it is an Armstrong number
+    if (i === (digit1 ** 3 + digit2 ** 3 + digit3 ** 3)) {
+      armstrongNumbers.push(i);
+    }
+  }
+
+  // Display the found Armstrong numbers
+  if (armstrongNumbers.length === 0) {
+    alert("No Armstrong numbers found.");
+  } else {
+    alert("Armstrong numbers of 3 digits: " + armstrongNumbers.join(", "));
+  }
+}
+</script>
+
+</body>
+</html>

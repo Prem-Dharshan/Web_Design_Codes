@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bike Average Consumption Calculator</title>
+</head>
+<body>
+
+<h2>Bike Average Consumption Calculator</h2>
+
+<label for="distanceInput">Total Distance Travelled (km):</label>
+<input type="text" id="distanceInput" placeholder="Enter total distance in km"><br>
+
+<label for="fuelInput">Total Fuel Spent (litres):</label>
+<input type="text" id="fuelInput" placeholder="Enter total fuel spent in litres"><br>
+
+<button onclick="calculateAverageConsumption()">Calculate</button><br>
+
+<p id="result"></p>
+
+<script>
+function calculateAverageConsumption() {
+  const distance = parseFloat(document.getElementById("distanceInput").value);
+  const fuel = parseFloat(document.getElementById("fuelInput").value);
+  
+  const averageConsumption = distance / fuel;
+  
+  document.getElementById("result").innerHTML = "Average consumption (km/lt): " + averageConsumption.toFixed(3);
+}
+</script>
+
+</body>
+</html>

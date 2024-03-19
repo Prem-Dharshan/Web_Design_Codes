@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Grades</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.pass {
+  color: green;
+}
+
+.fail {
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h2>Student Grades</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Average Marks</th>
+    <th>Grade</th>
+    <th>Pass/Fail</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td id="johnAverage"></td>
+    <td id="johnGrade"></td>
+    <td id="johnPassFail"></td>
+  </tr>
+  <tr>
+    <td>Alice</td>
+    <td id="aliceAverage"></td>
+    <td id="aliceGrade"></td>
+    <td id="alicePassFail"></td>
+  </tr>
+  <!-- Add more rows for additional students -->
+</table>
+
+<script>
+// Function to calculate grade based on average marks
+function calculateGrade(averageMarks) {
+  if (averageMarks < 60) {
+    return "F";
+  } else if (averageMarks >= 60 && averageMarks <= 69) {
+    return "D";
+  } else if (averageMarks >= 70 && averageMarks <= 79) {
+    return "C";
+  } else if (averageMarks >= 80 && averageMarks <= 89) {
+    return "B";
+  } else {
+    return "A";
+  }
+}
+
+// Function to check pass or fail
+function passFail(averageMarks) {
+  return averageMarks >= 50 ? "Pass" : "Fail";
+}
+
+// Student data
+const students = [
+  { name: "John", marks: [75, 80, 65, 70, 85] },
+  { name: "Alice", marks: [90, 85, 92, 88, 86] }
+  // Add more students here
+];
+
+// Loop through each student
+students.forEach(student => {
+  const averageMarks = student.marks.reduce((total, mark) => total + mark, 0) / student.marks.length;
+  const grade = calculateGrade(averageMarks);
+  const passFailStatus = passFail(averageMarks);
+
+  // Update table with student information
+  document.getElementById(`${student.name.toLowerCase()}Average`).textContent = averageMarks.toFixed(2);
+  document.getElementById(`${student.name.toLowerCase()}Grade`).textContent = grade;
+  document.getElementById(`${student.name.toLowerCase()}PassFail`).textContent = passFailStatus;
+});
+</script>
+
+</body>
+</html>

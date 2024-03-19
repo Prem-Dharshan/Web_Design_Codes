@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reverse Number</title>
+</head>
+
+<body>
+
+    <h2>Reverse Number</h2>
+
+    <script>
+        function reverseNumber( number ) {
+            const reversedNumber = parseInt( number.toString().split( '' ).reverse().join( '' ) );
+            return reversedNumber;
+        }
+
+        const x = 32243;
+        const reversedX = reverseNumber( x );
+        alert( "Reversed number: " + reversedX );
+    </script>
+
+</body>
+
+</html>

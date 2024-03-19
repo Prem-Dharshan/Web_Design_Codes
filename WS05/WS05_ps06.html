@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Miles to Kilometers Converter</title>
+</head>
+<body>
+
+<h2>Miles to Kilometers Converter</h2>
+
+<label for="milesInput">Miles:</label>
+<input type="text" id="milesInput" placeholder="Enter miles">
+<button onclick="convertMilesToKilometers()">Convert to Kilometers</button>
+
+<br><br>
+
+<label for="kilometersInput">Kilometers:</label>
+<input type="text" id="kilometersInput" placeholder="Enter kilometers">
+<button onclick="convertKilometersToMiles()">Convert to Miles</button>
+
+<script>
+function convertMilesToKilometers() {
+  const miles = parseFloat(document.getElementById("milesInput").value);
+  const kilometers = miles * 1.60934; // Conversion factor: 1 mile = 1.60934 kilometers
+  document.getElementById("kilometersInput").value = kilometers.toFixed(2); // Display result in kilometers with two decimal places
+}
+
+function convertKilometersToMiles() {
+  const kilometers = parseFloat(document.getElementById("kilometersInput").value);
+  const miles = kilometers / 1.60934; // Conversion factor: 1 kilometer = 0.621371 miles
+  document.getElementById("milesInput").value = miles.toFixed(2); // Display result in miles with two decimal places
+}
+</script>
+
+</body>
+</html>
