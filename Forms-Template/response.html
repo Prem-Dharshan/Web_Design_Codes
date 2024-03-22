@@ -4,11 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Response</title>
+    <title>Response</title>
 </head>
 
 <body>
+    <div class="response-container">
+        <h1>Form Response</h1>
+        <p>Email: <span id="email"></span></p>
+        <p>Password: <span id="password"></span></p>
+    </div>
 
+    <script>
+        // Retrieve email and password from URL
+        const params = new URLSearchParams( window.location.search );
+        const email = params.get( 'email' );
+        const password = params.get( 'password' );
+
+        // Display email and password
+        document.getElementById( "email" ).textContent = email ? decodeURIComponent( email ) : "Not provided";
+        document.getElementById( "password" ).textContent = password ? decodeURIComponent( password ) : "Not provided";
+    </script>
 </body>
 
 </html>

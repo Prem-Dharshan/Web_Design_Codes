@@ -17,6 +17,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 0 auto;
 }
 
 .input-field {
@@ -39,4 +40,8 @@ body {
 
 input {
 	margin-top: 5px;
+}
+
+.invalid-input {
+    outline: 2px solid red;
 }
