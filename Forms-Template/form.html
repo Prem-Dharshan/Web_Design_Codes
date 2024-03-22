@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function validate() {
+            const email = sign_in.email.value;
+            const pwd = sign_in.password.value;
+
+            const emailRegex = /^\w+@[a - zA - Z_] +\.[a - zA - Z]{ 2, 3 }$/;
+            const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+
+            let errorMessage = "";
+
+            if ( !emailRegex.test( email ) ) {
+                errorMessage = "Invalid email format. Please enter a valid email address.\n";
+                document.getElementsByClassName( "alert-msg" )[0].innerHTML = errorMessage;
+            }
+
+            if ( !passwordRegex.test( pwd ) ) {
+                errorMessage = "Invalid password. Password must be at least 8 characters long and contain a lowercase letter, an uppercase letter, a number, and a special character.\n";
+                document.getElementsByClassName( "alert-msg" )[1].innerHTML = errorMessage;
+            }
+
+            if ( errorMessage ) {
+                // alert( errorMessage );
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <form method="get" name="sign_in" onsubmit="return validate()">
+
+            <div class="input-field">
+                <label for="email"> Email </label>
+                <input type="email" id="email" name="email">
+                <span class="alert-msg"></span>
+            </div>
+
+            <div class="input-field">
+                <label for="password"> Password </label>
+                <input type="password" id="password" name="password">
+                <span class="alert-msg"></span>
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
