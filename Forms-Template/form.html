@@ -14,7 +14,8 @@
             const pwd = sign_in.password.value;
 
             const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+            const passwordRegex = /^(?=.*[a-zA-Z0-9]).{8,}$/;
+            // (?=.*\d)
 
             let errorMessage = "";
 

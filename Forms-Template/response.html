@@ -22,7 +22,7 @@
 
         // Display email and password
         document.getElementById( "email" ).textContent = email ? decodeURIComponent( email ) : "Not provided";
-        document.getElementById( "password" ).textContent = password ? decodeURIComponent( password ) : "Not provided";
+        document.getElementById( "password" ).textContent = password ? "*".repeat(decodeURIComponent( password ).length) : "Not provided";
     </script>
 </body>
 
