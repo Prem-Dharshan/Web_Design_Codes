@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WS07_ps04</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 300px;
+            text-align: right;
+            vertical-align: top;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .inputs {
+            display: inline;
+
+            label {
+                width: 100px;
+                text-align: left;
+            }
+        }
+
+        h1 {
+            margin-left: 200px;
+        }
+
+        input {
+            display: inline;
+        }
+
+        .msg {
+            color: red;
+        }
+
+        .button-container {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            margin-top: 20px;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Registration form</h1>
+        <form action="submit.php" class="form" id="signup" name="signup" method="post" target="_blank">
+            <div class="input-group">
+                <label for="uname">User ID:</label>
+                <input type="text" name="uname" id="uname" />
+                <span class="msg"></span>
+            </div>
+            <div class="input-group">
+                <label for="passwd">Password:</label>
+                <input type="password" name="passwd" id="passwd" />
+                <span class="msg"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" />
+                <span class="msg"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="addr">Address:</label>
+                <input type="text" name="addr" id="addr" />
+                <span class="msg"></span>
+            </div>
+
+            <label for="country">Country :</label>
+            <select name="country" id="country">
+                <option value="" disabled selected>(Please select a country)</option>
+
+                <option value="in">India</option>
+                <option value="us">USA</option>
+                <option value="uk">UK</option>
+                <option value="au">Austraila</option>
+            </select>
+            <span class="msg"></span>
+
+            <div class="input-group">
+                <label for="zip">ZIP code:</label>
+                <input type="number" name="zip" id="zip" />
+                <span class="msg"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" />
+                <span class="msg"> </span>
+            </div>
+
+            <div class="input-group">
+                <label for="">Sex: </label>
+                <div class="inputs rad">
+                    <input type="radio" id="male" name="sex" value="m" required />
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="sex" value="f" />
+                    <label for="female">Female</label>
+                </div>
+                <span class="msg"> </span>
+            </div>
+
+            <div class="input-group">
+                <label for="">Language: </label>
+                <div class="inputs chk">
+                    <input type="checkbox" name="lang" id="eng" value="eng" />
+                    <label for="eng">English</label>
+                    <input type="checkbox" name="lang" id="neng" value="neng" />
+                    <label for="neng">Non English</label>
+                </div>
+                <span class="msg"> </span>
+            </div>
+
+            <div class="input-group">
+                <label for="mensaje">Message :</label>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="4"></textarea>
+                <span class="msg"></span>
+            </div>
+
+            <div class="button-container">
+                <button onclick="validate(event)">Submit</button>
+            </div>
+        </form>
+
+        <script>
+            let validate = () => {
+                let isValid = true;
+                document.querySelectorAll( "span.msg" ).forEach( ( x ) => {
+                    x.style.display = "inline-block";
+                    x.innerHTML = "";
+                } );
+
+                let $ = ( elt ) => document.getElementById( elt );
+
+                if ( !/^[\w \s]{5,12}$/.test( $( "uname" ).value ) ) {
+                    document.querySelector( "#uname+span.msg" ).innerHTML =
+                        "Required and must be of length 5 to 12.";
+                    isValid = false;
+                }
+
+                if ( !/^[a-zA-Z]+$/.test( $( "name" ).value ) ) {
+                    document.querySelector( "#name+span.msg" ).innerHTML =
+                        "Required and alphabets only.";
+                    isValid = false;
+                }
+                if ( !/^\w{7,12}$/.test( $( "passwd" ).value ) ) {
+                    document.querySelector( "#passwd+span.msg" ).innerHTML =
+                        "Required and must be of length 7 to 12.";
+                    isValid = false;
+                }
+
+                if ( $( "country" ).value === "" ) {
+                    document.querySelector( "select+span.msg" ).innerHTML =
+                        "Required. Must select a country.";
+                    isValid = false;
+                }
+
+                if ( !/^\d+$/.test( $( "zip" ).value ) ) {
+                    document.querySelector( "#zip+span.msg" ).innerHTML =
+                        "Required. Must be numeric only.";
+                    isValid = false;
+                }
+                if (
+                    !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                        $( "email" ).value
+                    )
+                ) {
+                    document.querySelector( "#email+span.msg" ).innerHTML =
+                        "Required. Must be a valid email.";
+                    isValid = false;
+                }
+                let ans = [];
+                let radios = document
+                    .getElementsByName( "sex" )
+                    .forEach( ( x ) => ( ans = ans.concat( x.checked ) ) );
+                if ( !ans.some( ( x ) => x ) ) {
+                    document.querySelector( ".rad+span.msg" ).innerHTML += "Required.";
+                    isValid = false;
+                }
+
+                ans = [];
+                radios = document
+                    .getElementsByName( "lang" )
+                    .forEach( ( x ) => ( ans = ans.concat( x.checked ) ) );
+                if ( !ans.some( ( x ) => x ) ) {
+                    document.querySelector( ".chk+span.msg" ).innerHTML += "Required.";
+                    isValid = false;
+                }
+
+                return isValid;
+            };
+
+            document.querySelector( "form.form" ).addEventListener( "submit", ( event ) => {
+                if ( !validate() ) {
+                    event.preventDefault(); // Prevent form submission if validation fails
+                }
+            } );
+        </script>
+
+    </div>
+</body>
+
+</html>
