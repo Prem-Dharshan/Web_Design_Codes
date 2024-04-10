@@ -1,42 +1,34 @@
 <?php
-// Establish database connection
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "test";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $name = $_POST['user'];
+    $price = $_POST['tps'];
+    $quan = $_POST['tq'];
+    $amt = $_POST['fin'];
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    // print_r( $_POST);
+    $servername = 'localhost';
+    $user = "root";
+    $pass = "root";
+    $db = "fourth";
 
-// Retrieve form data
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$cake_type = $_POST['cake_type'];
-$quantity = $_POST['quantity'];
-$special_message = $_POST['special_message'];
-$address = $_POST['address'];
+    $conn = new mysqli($servername, $user, $pass, $db);
 
-// Insert data into orders table
-$sql = "INSERT INTO orders3 (name, email, phone_number, cake_type, quantity, special_message, address) VALUES (?, ?, ?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssiss", $name, $email, $phone, $cake_type, $quantity, $special_message, $address);
+    if ($conn->connect_error) {
+        die("Connection errror. " . $conn->connect_error);
+    }
 
-// Validate inputs
-if (empty($name) || empty($email) || empty($phone) || empty($cake_type) || empty($address) || $quantity < 1 || $quantity > 10) {
-    echo "Invalid input data.";
-} else {
-    if ($stmt->execute() === TRUE) {
-        echo "Order placed successfully!";
+    echo "Connection estd.";
+
+    $q = $conn->query("Select id from user_table where uname = '$name'");
+    if ($q->num_rows > 0) {
+        $uid = $q->fetch_assoc()['id'];
+    }
+
+
+    if ($conn->query("insert into bill (user_id, price, quantity, amount) values ('$uid','$price','$quan','$amt');")) {
+        echo "Transaction recorded.";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        die($conn->error);
     }
 }
-
-$stmt->close();
-$conn->close();
-?>

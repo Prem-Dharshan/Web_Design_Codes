@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    background-color: aquamarine;
+    text-align: left;
+    padding: 50px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-container h1 {
+    border: 2px double blue;
+    padding: 20px 100px;
+    border-width: 5px;
+    margin-bottom: 50px;
+}
+
+.input-field {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input-field span {
+    width: 150px;
+}
+
+.input-field input[type="text"],
+.input-field input[type="tel"],
+.input-field input[type="email"] {
+    height: 20px;
+    width: 200px;
+}
+
+.input-field label {
+    padding: 0px 5px;
+}
+
+.input-field i {
+    padding: 0px 5px;
+}
+
+.input-field #addr {
+    height: 20px;
+    width: 400px;
+}
+
+#submit {
+
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.alert-msg {
+    font-style: normal;
+    font-size: x-small;
+    color: red;
+    margin-top: 10px;
+    display: block; 
+}
+
+.code-container {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	background-color: #f1f1f1;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+}
+
+.success {
+	color: green;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.form-with-error .input-field {
+    margin-bottom: 10px; 
+}

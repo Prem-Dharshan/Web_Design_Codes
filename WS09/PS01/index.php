@@ -301,7 +301,7 @@
             var size2 = document.getElementById('size2').value;
 
             const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            const nameRegex = /^[a-zA-Z]+$/;
+            const nameRegex = /^[a-zA-Z]+$/;  
             const phoneRegex = /^\d{3}\s\d{3}\s\d{4}$/;
 
             let errorMessage = "";
