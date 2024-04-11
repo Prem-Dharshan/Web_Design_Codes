@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSF - Q4</title>
+    <title>Multi Product Table</title>
     <style>
         * {
             padding: 0;
